@@ -1,0 +1,117 @@
+<style>
+.el_infobox {
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 100px auto 0 auto;
+    padding: 30px 20px 20px 30px;
+    text-align: center;
+    background: transparent;
+}
+.el_infobox img {
+    width: 100%;
+    max-width: 100px;
+    height: 100px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    padding: 2px 2px 2px 2px;
+    margin: 10px 10px 10px 10px;
+    object-fit: cover;
+}
+.el_infobox i {
+    font-size: 40px;
+    background: darkslategray;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+    width: 64px;
+    height: 64px;
+    line-height: 45px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    color: #fff;
+}
+.el_infobox h1 {
+    color: darkslategray;
+    font-size: 32px;
+    line-height: 40px;
+    margin: 10px auto 0 auto;
+}
+.el_infobox p {
+    color: darkslategray;
+    font-size: 16x;
+    line-height: 24px;
+    margin: 0 auto 10px auto;
+}  
+.el_infobox a {
+    background: darkslategray;
+    color: #fff;
+    padding: 5px 15px 5px 15px;
+    margin: 0 0 0 0;
+    display: inline-block;
+    border: 1px solid darkslategray;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 16x;
+    line-height: 24px;
+}.el_infobox a:hover {
+    background: #000;
+    color: #fff;
+}
+</style>
+<div class="el_infobox">
+      <img src="{{ section.settings.el_infobox | image_url }}" alt="Infobox Image" width="" height="">
+      <!-- <i class="fas fa-info-circle"></i> -->
+      <h1>{{ section.settings.el_title }}</h1>
+      <p>{{ section.settings.el_description }}</p>
+      <a href="{{ section.settings.el_btn_url }}">{{ section.settings.el_btn_text }}</a>
+</div>
+
+{% schema %}
+  {
+    "name": "Infobox",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "el_infobox",
+        "label": "Add Image"
+      },
+      {
+        "type": "text",
+        "id": "el_title",
+        "label": "Title",
+        "default": "Dummy Text"
+      },
+      {
+        "type": "textarea",
+        "id": "el_description",
+        "label": "Description",
+        "default": "it's a just a dummy description"
+      },
+      {
+        "type": "text",
+        "id": "el_btn_text",
+        "label": "Button Text",
+        "default": "Click Here"
+      },
+      {
+        "type": "url",
+        "id": "el_btn_url",
+        "label": "Button Url"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Infobox"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
